@@ -1,7 +1,10 @@
 '''
-author:Karthika T.B
-date:14-11-2024
-description:A function that returns the number of characters in a given string.
+author:karthika tb
+date:16-11-2024
+description:Create and Manipulate a List of Favorite Foods
 '''
-word=input("enter a word:")
-print(len(word))
+favourite_food=["pizza","sushi","ice cream"]
+for i in favourite_food:
+    print(i)
+favourite_food.append("pasta")
+print(favourite_food)
