@@ -1,10 +1,6 @@
 '''
 author:karthika tb
-date:16-11-2024
-description:Create and Manipulate a List of Favorite Foods
+date:18-11-2024
 '''
-favourite_food=["pizza","sushi","ice cream"]
-for i in favourite_food:
+for i in range(1,11):
     print(i)
-favourite_food.append("pasta")
-print(favourite_food)
