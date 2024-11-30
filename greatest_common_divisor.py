@@ -10,6 +10,7 @@ custom=maximum(num1,num2,num3)
 print("the largest number is",custom)
 '''
 #Write a Python function to sum all the numbers in a list.
+'''
 def add(list):
     sum=0
     for i in list:
@@ -23,5 +24,25 @@ for i in range(element):
     list.append(num)
 print(list)
 add(list)
+'''
+'''
+def product(list):
+    multi=1
+    for i in list:
+        multi=multi*i
+    print(multi)
+list=[]
+element=int(input("enter the elements:"))
 
-
+for i in range(element):
+    num=int(input("enter the number:"))
+    list.append(num)
+print(list)
+product(list)
+'''
+'''
+def reverse(str):
+    return str[-1::-1]
+custom=input("enter the numbers: ")
+print(reverse(custom))
+'''
