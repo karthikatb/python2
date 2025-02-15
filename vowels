@@ -1,0 +1,34 @@
+// Write a C Program to check Whether a Character is Vowel or Consonant.
+#include<stdio.h>
+int main()
+{
+    char letter;
+    printf("enter a letter:");
+    scanf(" %c",&letter);
+    switch (letter)
+    {
+        case 'a':
+        case 'A':
+         printf("vowel");
+        break;
+        case 'e':
+        case 'E':
+         printf("vowel");
+        break;
+        case 'i':
+        case 'I':
+         printf("vowel");
+        break;
+        case 'o':
+        case 'O': 
+         printf("vowel");
+        break;
+        case 'u':
+        case 'U':
+         printf("vowel");
+        break;
+        default:
+        printf("invalid");
+        }
+    return 0;
+}
