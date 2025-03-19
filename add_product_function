@@ -1,0 +1,26 @@
+#include<stdio.h>
+int add(int,int);
+int pro(int,int);
+int main()
+{
+    int x,y,result,product;
+   printf("enter the two numbers:");
+   scanf("%d%d",&x,&y);
+    result=add(x,y);
+    product=pro(x,y);
+    printf("sum=%d\n",result);
+    printf("product=%d",product);
+    return 0;
+}
+int add(int a,int b)
+{
+    int sum=0;
+    sum=a+b;
+    return sum;
+}
+int pro(int a,int b)
+{
+    int multi=1;
+    multi=a*b;
+    return multi;
+}
