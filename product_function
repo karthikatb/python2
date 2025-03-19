@@ -1,0 +1,17 @@
+#include<stdio.h>
+int product(int,int);
+int main()
+{
+    int x,y,result;
+    result=product(x,y);
+    printf("product=%d",result);
+    return 0;
+}
+int product(int a,int b)
+{
+    int pro=1;
+   printf("enter the two numbers:\n");
+   scanf("%d%d",&a,&b);
+    pro=a*b;
+    return pro;
+}
