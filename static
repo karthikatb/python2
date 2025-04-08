@@ -1,0 +1,14 @@
+#include<stdio.h>
+void add()
+{
+static int y=4;
+y++;
+printf("y=%d\n",y);
+}
+int main()
+{
+    add();
+    add();
+    add();
+    return 0;
+}
