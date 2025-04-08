@@ -1,0 +1,14 @@
+#include<stdio.h>
+int y=10;
+void function1();
+int main()
+
+{
+    printf("main:%d\n",y);
+    function1();
+    return 0;
+}
+void function1()
+{
+    printf("void:%d",y);
+}
