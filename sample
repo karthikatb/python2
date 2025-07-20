@@ -1,0 +1,88 @@
+#include <stdio.h>
+
+#define MAX_TERMS 100
+
+// Structure to represent a term in the polynomial
+struct term {
+    int coeff;
+    int exp;
+};
+
+int main() {
+    struct term poly1[MAX_TERMS], poly2[MAX_TERMS], result[MAX_TERMS];
+    int n1, n2, nresult = 0;
+    int i, j, k;
+
+    // Input first polynomial
+    printf("Enter number of terms in first polynomial: ");
+    scanf("%d", &n1);
+    printf("Enter the terms in descending order of exponents (coeff exp):\n");
+    for (i = 0; i < n1; i++) {
+        printf("Term %d: ", i + 1);
+        scanf("%d %d", &poly1[i].coeff, &poly1[i].exp);
+    }
+
+    // Input second polynomial
+    printf("Enter number of terms in second polynomial: ");
+    scanf("%d", &n2);
+    printf("Enter the terms in descending order of exponents (coeff exp):\n");
+    for (i = 0; i < n2; i++) {
+        printf("Term %d: ", i + 1);
+        scanf("%d %d", &poly2[i].coeff, &poly2[i].exp);
+    }
+
+    // Add the polynomials
+    i = j = k = 0;
+    while (i < n1 && j < n2) {
+        if (poly1[i].exp == poly2[j].exp) {
+            result[k].coeff = poly1[i].coeff + poly2[j].coeff;
+            result[k].exp = poly1[i].exp;
+            i++; j++; k++;
+        } else if (poly1[i].exp > poly2[j].exp) {
+            result[k++] = poly1[i++];
+        } else {
+            result[k++] = poly2[j++];
+        }
+    }
+
+    // Copy remaining terms
+    while (i < n1) {
+        result[k++] = poly1[i++];
+    }
+    while (j < n2) {
+        result[k++] = poly2[j++];
+    }
+
+    nresult = k;
+
+    // Sort result in descending order of exponents (if not already sorted)
+    for (i = 0; i < nresult - 1; i++) {
+        for (j = i + 1; j < nresult; j++) {
+            if (result[i].exp < result[j].exp) {
+                struct term temp = result[i];
+                result[i] = result[j];
+                result[j] = temp;
+            }
+        }
+    }
+
+    // Display the result
+    printf("Sum of the polynomials is: ");
+    for (i = 0; i < nresult; i++) {
+        if (result[i].coeff == 0)
+            continue;
+
+        if (i > 0 && result[i].coeff > 0)
+            printf(" + ");
+
+        if (result[i].exp == 0)
+            printf("%d", result[i].coeff);
+        else if (result[i].exp == 1)
+            printf("%dx", result[i].coeff);
+        else
+            printf("%dx^%d", result[i].coeff, result[i].exp);
+    }
+    printf("\n");
+
+    return 0;
+}
